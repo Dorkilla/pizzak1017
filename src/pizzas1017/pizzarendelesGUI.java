@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package pizzarendeles;
+package Pizzas1017;
 
 import javax.swing.JOptionPane;
 /**
@@ -91,7 +91,6 @@ public class pizzarendelesGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(211, 51, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(350, 350));
 
         Tészta.setBackground(new java.awt.Color(231, 231, 231));
         Tészta.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tészta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 14))); // NOI18N
@@ -468,6 +467,11 @@ public class pizzarendelesGUI extends javax.swing.JFrame {
 
         btnOK.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 2, 14)); // NOI18N
         btnOK.setText("OK");
+        btnOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOKActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -502,7 +506,7 @@ public class pizzarendelesGUI extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 284, Short.MAX_VALUE))
                         .addGap(32, 32, 32))))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -562,7 +566,7 @@ public class pizzarendelesGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtKicsiStateChanged
 
     private void rbtKicsiItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rbtKicsiItemStateChanged
-        Csere();
+        csere();
     }//GEN-LAST:event_rbtKicsiItemStateChanged
 
     private void chbVeganItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chbVeganItemStateChanged
@@ -577,16 +581,19 @@ public class pizzarendelesGUI extends javax.swing.JFrame {
         chbSzalami.setEnabled(true);
         chbKolbasz.setEnabled(true);
         chbHal.setEnabled(true);
-        
+        }
     }//GEN-LAST:event_chbVeganItemStateChanged
+
+    private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
+     JOptionPane.showMessageDialog(rootPane, "Fizetendő 2500Ft");
+    }//GEN-LAST:event_btnOKActionPerformed
+      
     
-    }   
-    
-        private void Csere() {
+        private void csere() {
          String s = txtf25.getText();
         txtf25.setText(txtf32.getText());
         txtf32.setText(s);
-    }
+}
     
 /**
      * @param args the command line arguments
@@ -615,7 +622,7 @@ public class pizzarendelesGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(pizzarendelesGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
